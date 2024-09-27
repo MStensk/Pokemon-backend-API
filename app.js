@@ -5,6 +5,9 @@ app.use(express.json());
 app.use(cors());
 const port = process.env.PORT || 4000;
 const UserRoutes = require("./routes/UserRoutes")
+const AuthRoutes = require("./routes/AuthRoutes")
+app.use("/user", UserRoutes)
+app.use("/", AuthRoutes)
 
 app.listen(port, () => {
     console.log("Server listening on port: " + port)
